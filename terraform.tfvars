@@ -1,1 +1,1 @@
-GITHUB_TOKEN = "SECRET"
+TF_VAR_GITHUB_TOKEN = "secrettoken"

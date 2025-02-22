@@ -7,17 +7,17 @@ terraform {
   }
 }
 
-variable "GITHUB_TOKEN" {
-  description = "Github token access"
+variable "TF_VAR_GITHUB_TOKEN" {
+  description = "Github access token"
   type = string
 }
 
 provider "github" {
-  token = var.GITHUB_TOKEN
+  token = var.TF_VAR_GITHUB_TOKEN
 }
 
 resource "github_repository" "Repo" {
-  name = "Iac - lab3 repo"
+  name = "Iac-lab3-repo"
   description = "Este repositorio es una prueba de terraform para el laboratorio 3 de Infra & Arch."
   visibility = "public"
 
@@ -48,7 +48,7 @@ resource "github_branch" "Dev" {
   branch = "dev"
 }
 
-resource "github_branch" "Pagos" {
+resource "github_branch" "First" {
   repository = github_repository.Repo.name
-  branch = "payment"
+  branch = "first"
 }
